@@ -1,0 +1,149 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  padding: 14px 24px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9.6px;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 32.47px;
+  height: 24px; */
+}
+
+.logoIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logoText {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: var(--line-height-tight);
+  user-select: none;
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.streakBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--accent-bg);
+  border-radius: var(--radius-full);
+  height: 32px;
+  transition: background-color var(--transition-fast);
+}
+
+.streakBadge:hover {
+  background-color: rgba(48, 0, 64, 0.1);
+}
+
+.streakCount {
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  line-height: var(--line-height-normal);
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 1px solid #08003145;
+  background-color: transparent;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+[data-theme="dark"] .iconButton {
+  border-color: #EEE7FF5D;
+}
+
+.iconButton:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-secondary);
+}
+
+.iconButton:active {
+  transform: scale(0.95);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+    height: 56px;
+  }
+  
+  .logoText {
+    font-size: 20px;
+  }
+  
+  .actions {
+    gap: var(--spacing-sm);
+  }
+  
+  .streakBadge {
+    padding: 2px 6px;
+    height: 28px;
+  }
+  
+  .streakCount {
+    font-size: var(--font-size-2);
+  }
+  
+  .iconButton,
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+}
